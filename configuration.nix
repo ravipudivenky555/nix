@@ -174,6 +174,7 @@
     lutris
     kdePackages.discover
     kitty
+    mpv
     nodejs
     ripgrep
     unzip
