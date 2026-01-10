@@ -26,7 +26,7 @@
     automatic = true;
     dates = "weekly";
     persistent = true;
-    options = "--delete-older-than 7d";
+    options = "--delete-older-than 3d";
   };
 
   networking.hostName = "nixos"; # Define your hostname.
