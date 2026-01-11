@@ -5,10 +5,9 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   nix.enable = true;
 
@@ -101,21 +100,15 @@
     isNormalUser = true;
     description = "Ravipudi Venkatesh";
     extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
-    packages = with pkgs; [
-      kdePackages.kate
-    #  thunderbird
-    ];
   };
 
-  security.sudo.extraRules = [
-    {
-      users = ["venkatesh"];
-      commands = [{
-        command = "ALL";
-        options = ["NOPASSWD"];
-      }];
-    }
-  ];
+  security.sudo.extraRules = [{
+    users = [ "venkatesh" ];
+    commands = [{
+      command = "ALL";
+      options = [ "NOPASSWD" ];
+    }];
+  }];
 
   # Install programs.
   programs.appimage = {
@@ -134,9 +127,7 @@
     vimAlias = true;
     defaultEditor = true;
   };
-  programs.nix-ld = {
-    enable = true;
-  };
+  programs.nix-ld = { enable = true; };
   programs.steam.enable = true;
   programs.virt-manager.enable = true;
 
@@ -145,14 +136,16 @@
 
   fonts.enableDefaultPackages = true;
   fonts.fontDir.enable = true;
-  fonts.packages = with pkgs; [
-    noto-fonts
-    noto-fonts-cjk-sans
-    noto-fonts-cjk-serif
-    noto-fonts-color-emoji
-    noto-fonts-emoji-blob-bin
-    noto-fonts-monochrome-emoji
-  ] ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
+  fonts.packages = with pkgs;
+    [
+      noto-fonts
+      noto-fonts-cjk-sans
+      noto-fonts-cjk-serif
+      noto-fonts-color-emoji
+      noto-fonts-emoji-blob-bin
+      noto-fonts-monochrome-emoji
+    ] ++ builtins.filter lib.attrsets.isDerivation
+    (builtins.attrValues pkgs.nerd-fonts);
 
   virtualisation.libvirtd = {
     enable = true;
