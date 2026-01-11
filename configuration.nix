@@ -180,6 +180,7 @@
     kitty
     mpv
     nodejs
+    onlyoffice-desktopeditors
     ripgrep
     unzip
     uv
