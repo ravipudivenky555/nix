@@ -167,6 +167,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     brave
+    cargo
     chromium
     clang
     discord
@@ -181,6 +182,7 @@
     mpv
     nodejs
     onlyoffice-desktopeditors
+    rustc
     ripgrep
     unzip
     uv
