@@ -118,6 +118,10 @@
   ];
 
   # Install programs.
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
   programs.firefox.enable = true;
   programs.git = {
     enable = true;
