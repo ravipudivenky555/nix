@@ -175,6 +175,7 @@
     mpv
     nodejs
     onlyoffice-desktopeditors
+    quickemu
     rustc
     ripgrep
     unzip
