@@ -120,6 +120,8 @@
     enable = true;
     lfs.enable = true;
   };
+  programs.gamemode.enable = true;
+  programs.gamescope.enable = true;
   programs.java.enable = true;
   programs.neovim = {
     enable = true;
@@ -169,6 +171,7 @@
     gh
     go
     google-chrome
+    heroic
     lutris
     kdePackages.discover
     kitty
