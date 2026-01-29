@@ -23,7 +23,7 @@
   #Nix garbage collection
   nix.gc = {
     automatic = true;
-    dates = "weekly";
+    dates = "daily";
     persistent = true;
     options = "--delete-older-than 3d";
   };
