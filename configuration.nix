@@ -68,6 +68,14 @@
     open = false;
     modesetting.enable = true;
     powerManagement.enable = true;
+    prime = {
+      amdgpuBusId = "PCI:75:0:0";
+      nvidiaBusId = "PCI:1:0:0";
+      offload = {
+        enable = true;
+        enableOffloadCmd = true;
+      };
+    };
   };
 
   # Enable the KDE Plasma Desktop Environment.
