@@ -182,6 +182,7 @@
     chromium
     clang
     discord
+    fuzzel
     fzf
     gcc
     gh
