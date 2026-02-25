@@ -5,7 +5,8 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ # Include the results of the hardware scan.
+  imports = [
+    # Include the results of the hardware scan.
     ./hardware-configuration.nix
   ];
 
@@ -18,7 +19,10 @@
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   #Nix garbage collection
   nix.gc = {
@@ -99,16 +103,24 @@
   users.users.venkatesh = {
     isNormalUser = true;
     description = "Ravipudi Venkatesh";
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "libvirtd"
+    ];
   };
 
-  security.sudo.extraRules = [{
-    users = [ "venkatesh" ];
-    commands = [{
-      command = "ALL";
-      options = [ "NOPASSWD" ];
-    }];
-  }];
+  security.sudo.extraRules = [
+    {
+      users = [ "venkatesh" ];
+      commands = [
+        {
+          command = "ALL";
+          options = [ "NOPASSWD" ];
+        }
+      ];
+    }
+  ];
 
   # Install programs.
   programs.appimage = {
@@ -129,16 +141,19 @@
     vimAlias = true;
     defaultEditor = true;
   };
-  programs.nix-ld = { enable = true; };
+  programs.niri.enable = true;
+  programs.nix-ld.enable = true;
   programs.steam.enable = true;
   programs.virt-manager.enable = true;
+  programs.xwayland.enable = true;
 
   services.dnsmasq.enable = true;
   services.flatpak.enable = true;
 
   fonts.enableDefaultPackages = true;
   fonts.fontDir.enable = true;
-  fonts.packages = with pkgs;
+  fonts.packages =
+    with pkgs;
     [
       noto-fonts
       noto-fonts-cjk-sans
@@ -146,8 +161,8 @@
       noto-fonts-color-emoji
       noto-fonts-emoji-blob-bin
       noto-fonts-monochrome-emoji
-    ] ++ builtins.filter lib.attrsets.isDerivation
-    (builtins.attrValues pkgs.nerd-fonts);
+    ]
+    ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 
   virtualisation.libvirtd = {
     enable = true;
@@ -185,6 +200,7 @@
     uv
     vim
     wget
+    xwayland-satellite
     zip
   ];
 
