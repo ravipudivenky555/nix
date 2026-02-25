@@ -201,13 +201,14 @@
     go
     google-chrome
     heroic
-    lutris
     kdePackages.discover
     kitty
+    lutris
     mpv
     nodejs
     onlyoffice-desktopeditors
     quickemu
+    quickshell
     rustc
     ripgrep
     unzip
