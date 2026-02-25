@@ -64,7 +64,11 @@
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
   services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.nvidia.open = false;
+  hardware.nvidia = {
+    open = false;
+    modesetting.enable = true;
+    powerManagement.enable = true;
+  };
 
   # Enable the KDE Plasma Desktop Environment.
   #services.displayManager.sddm.enable = true;
