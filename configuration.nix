@@ -145,6 +145,7 @@
   programs.nix-ld.enable = true;
   programs.steam.enable = true;
   programs.virt-manager.enable = true;
+  programs.waybar.enable = true;
   programs.xwayland.enable = true;
 
   services.dnsmasq.enable = true;
