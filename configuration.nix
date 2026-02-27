@@ -7,7 +7,12 @@
 {
   imports = [
     # Include the results of the hardware scan.
+    ./basic.nix
     ./hardware-configuration.nix
+    ./programs/neovim/nvim.nix
+    ./programs/niri/niri.nix
+    ./programs/programs.nix
+    ./programs/services.nix
   ];
 
   nix.enable = true;
@@ -19,19 +24,6 @@
   # Use latest kernel.
   # boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-
-  #Nix garbage collection
-  nix.gc = {
-    automatic = true;
-    dates = "daily";
-    persistent = true;
-    options = "--delete-older-than 3d";
-  };
-
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -41,74 +33,6 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-
-  # Set your time zone.
-  time.timeZone = "Asia/Kolkata";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_IN";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_IN";
-    LC_IDENTIFICATION = "en_IN";
-    LC_MEASUREMENT = "en_IN";
-    LC_MONETARY = "en_IN";
-    LC_NAME = "en_IN";
-    LC_NUMERIC = "en_IN";
-    LC_PAPER = "en_IN";
-    LC_TELEPHONE = "en_IN";
-    LC_TIME = "en_IN";
-  };
-
-  # Enable the X11 windowing system.
-  # You can disable this if you're only using the Wayland session.
-  services.xserver.enable = true;
-  services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.nvidia = {
-    open = false;
-    modesetting.enable = true;
-    powerManagement.enable = true;
-    prime = {
-      amdgpuBusId = "PCI:75:0:0";
-      nvidiaBusId = "PCI:1:0:0";
-      offload = {
-        enable = true;
-        enableOffloadCmd = true;
-      };
-    };
-  };
-  hardware.graphics.enable = true;
-  hardware.graphics.enable32Bit = true;
-
-  # Enable the KDE Plasma Desktop Environment.
-  #services.displayManager.sddm.enable = true;
-  services.displayManager.ly.enable = true;
-  services.desktopManager.plasma6.enable = true;
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
-  # Enable sound with pipewire.
-  services.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
-  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
@@ -124,110 +48,11 @@
     ];
   };
 
-  security.sudo.extraRules = [
-    {
-      users = [ "venkatesh" ];
-      commands = [
-        {
-          command = "ALL";
-          options = [ "NOPASSWD" ];
-        }
-      ];
-    }
-  ];
-
-  # Install programs.
-  programs.appimage = {
-    enable = true;
-    binfmt = true;
-  };
-  programs.firefox.enable = true;
-  programs.git = {
-    enable = true;
-    lfs.enable = true;
-  };
-  programs.gamemode.enable = true;
-  programs.gamescope.enable = true;
-  programs.java.enable = true;
-  programs.neovim = {
-    enable = true;
-    viAlias = true;
-    vimAlias = true;
-    defaultEditor = true;
-  };
-  programs.nm-applet.enable = true;
-  programs.niri.enable = true;
-  programs.nix-ld.enable = true;
-  programs.steam.enable = true;
-  programs.virt-manager.enable = true;
-  programs.waybar.enable = true;
-  programs.xwayland.enable = true;
-
-  services.dnsmasq.enable = true;
-  services.flatpak.enable = true;
-
-  fonts.enableDefaultPackages = true;
-  fonts.fontDir.enable = true;
-  fonts.packages =
-    with pkgs;
-    [
-      noto-fonts
-      noto-fonts-cjk-sans
-      noto-fonts-cjk-serif
-      noto-fonts-color-emoji
-      noto-fonts-emoji-blob-bin
-      noto-fonts-monochrome-emoji
-    ]
-    ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
-
-  virtualisation.libvirtd = {
-    enable = true;
-    qemu.package = pkgs.qemu_full;
-  };
-  virtualisation.spiceUSBRedirection.enable = true;
-
-  xdg.portal = {
-    enable = true;
-    wlr.enable = true;
-    xdgOpenUsePortal = true;
-  };
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    brave
-    cargo
-    chromium
-    clang
-    discord
-    fuzzel
-    fzf
-    gcc
-    gh
-    gnome-keyring
-    go
-    google-chrome
-    heroic
-    kdePackages.discover
-    kitty
-    lutris
-    mpv
-    nodejs
-    onlyoffice-desktopeditors
-    quickemu
-    quickshell
-    rustc
-    ripgrep
-    unzip
-    uv
-    vim
-    wget
-    xwayland-satellite
-    zip
-  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
