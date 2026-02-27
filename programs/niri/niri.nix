@@ -9,11 +9,12 @@
     wlr.enable = true;
     xdgOpenUsePortal = true;
   };
-  environment.etc."xdg/niri/config.kdl".source = ./config.kdl;
+  environment.etc."niri/config.kdl".source = ./config.kdl;
   environment.systemPackages = with pkgs; [
     fuzzel
     gnome-keyring
     networkmanagerapplet
+    pavucontrol
     xwayland-satellite
   ];
 }
