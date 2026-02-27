@@ -155,6 +155,7 @@
     vimAlias = true;
     defaultEditor = true;
   };
+  programs.nm-applet.enable = true;
   programs.niri.enable = true;
   programs.nix-ld.enable = true;
   programs.steam.enable = true;
