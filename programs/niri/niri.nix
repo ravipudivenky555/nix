@@ -15,6 +15,7 @@
     gnome-keyring
     networkmanagerapplet
     pavucontrol
+    swaybg
     xwayland-satellite
   ];
 }
