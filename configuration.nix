@@ -207,6 +207,7 @@
     fzf
     gcc
     gh
+    gnome-keyring
     go
     google-chrome
     heroic
