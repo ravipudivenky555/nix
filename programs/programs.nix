@@ -9,9 +9,6 @@
     enable = true;
     lfs.enable = true;
   };
-  programs.gamemode.enable = true;
-  programs.gamescope.enable = true;
-  programs.java.enable = true;
   programs.nix-ld.enable = true;
   programs.steam.enable = true;
   programs.virt-manager.enable = true;
@@ -38,26 +35,19 @@
 
   environment.systemPackages = with pkgs; [
     brave
-    cargo
     chromium
-    clang
     discord
-    gcc
     gh
-    go
     google-chrome
     heroic
     kdePackages.discover
     kitty
     lutris
     mpv
-    nodejs
     onlyoffice-desktopeditors
     quickemu
     quickshell
-    rustc
     unzip
-    uv
     wget
     zip
   ];
