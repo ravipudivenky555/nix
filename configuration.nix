@@ -3,17 +3,23 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { ... }:
-
+let
+  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/master.tar.gz";
+in
 {
   imports = [
-    # Include the results of the hardware scan.
     ./basic.nix
+    # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./programs/neovim/nvim.nix
     ./programs/niri/niri.nix
     ./programs/programs.nix
     ./programs/services.nix
+    (import "${home-manager}/nixos")
   ];
+
+  home-manager.useUserPackages = true;
+  home-manager.useGlobalPkgs = true;
 
   nix.enable = true;
 
