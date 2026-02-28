@@ -23,8 +23,8 @@ in
 
   home-manager.useUserPackages = true;
   home-manager.useGlobalPkgs = true;
-  home-manager.backupFileExtension="bkup";
-  home-manager.users.venkatesh = ./home.nix;
+  home-manager.backupFileExtension = "bkup";
+  home-manager.users.venkatesh = ./venky.nix;
 
   nix.enable = true;
 
