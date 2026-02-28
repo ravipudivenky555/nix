@@ -12,6 +12,10 @@
     persistent = true;
     options = "--delete-older-than 3d";
   };
+  system.autoUpgrade = {
+    enable = true;
+    allowReboot = false;
+  };
 
   # Set your time zone.
   time.timeZone = "Asia/Kolkata";
