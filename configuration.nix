@@ -4,7 +4,11 @@
 
 { ... }:
 let
-  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/master.tar.gz";
+  nixpkgs = import <nixpkgs> { };
+  release = nixpkgs.lib.concatStringsSep "." (
+    nixpkgs.lib.take 2 (nixpkgs.lib.splitVersion nixpkgs.lib.version)
+  );
+  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-${release}.tar.gz";
 in
 {
   imports = [
