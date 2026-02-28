@@ -9,6 +9,7 @@ let
     nixpkgs.lib.take 2 (nixpkgs.lib.splitVersion nixpkgs.lib.version)
   );
   home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-${release}.tar.gz";
+  stateVersion = "25.11";
 in
 {
   imports = [
@@ -24,6 +25,9 @@ in
 
   home-manager.useUserPackages = true;
   home-manager.useGlobalPkgs = true;
+  home-manager.users.venkatesh = {
+    home.stateVersion = stateVersion;
+  };
 
   nix.enable = true;
 
@@ -89,6 +93,6 @@ in
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "25.11"; # Did you read the comment?
+  system.stateVersion = stateVersion; # Did you read the comment?
 
 }
