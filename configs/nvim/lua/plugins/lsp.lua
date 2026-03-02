@@ -73,7 +73,6 @@ return {
 		},
 	},
 	config = function()
-		local lsp = require("lspconfig")
 		local cmp = require("cmp_nvim_lsp")
 		local lspconfig = require("mason-lspconfig")
 		require("luasnip.loaders.from_snipmate").lazy_load()
@@ -82,5 +81,8 @@ return {
 		vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show Info" })
 		vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Goto Definition" })
 		vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Actions" })
+		vim.lsp.config("pylsp",
+			{ settings = { pylsp = { plugins = { isort = { enabled = false }, pycodestyle = { ignore = { "E401", "E402" }, }, }, }, }, })
+		vim.lsp.enable("pylsp")
 	end,
 }
