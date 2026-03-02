@@ -12,6 +12,9 @@ in
     defaultEditor = true;
     extraPackages = with pkgs; [
       fzf
+			luajitPackages.lua-lsp
+			nil
+			nixfmt
       ripgrep
     ];
   };

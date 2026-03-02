@@ -73,8 +73,6 @@ return {
 		},
 	},
 	config = function()
-		local cmp = require("cmp_nvim_lsp")
-		local lspconfig = require("mason-lspconfig")
 		require("luasnip.loaders.from_snipmate").lazy_load()
 		require("luasnip.loaders.from_vscode").lazy_load()
 		require("luasnip.loaders.from_lua").lazy_load()
@@ -84,5 +82,7 @@ return {
 		vim.lsp.config("pylsp",
 			{ settings = { pylsp = { plugins = { isort = { enabled = false }, pycodestyle = { ignore = { "E401", "E402" }, }, }, }, }, })
 		vim.lsp.enable("pylsp")
+		vim.lsp.config("nil", { cmd = { "nil" }, })
+		vim.lsp.enable("nil")
 	end,
 }
