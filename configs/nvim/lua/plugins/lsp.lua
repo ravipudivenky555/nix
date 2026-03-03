@@ -81,6 +81,7 @@ return {
 		vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Actions" })
 		vim.lsp.config("pylsp",
 			{ settings = { pylsp = { plugins = { isort = { enabled = false }, pycodestyle = { ignore = { "E401", "E402" }, }, }, }, }, })
-		vim.lsp.config("nil", { cmd = { "nil" }, })
+		vim.lsp.config("nil", { cmd = { "nil" }, filetypes = { "nix" }, })
+		vim.lsp.enable("nil")
 	end,
 }
