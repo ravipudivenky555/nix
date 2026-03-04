@@ -16,6 +16,8 @@
     networkmanagerapplet
     pavucontrol
     swaybg
+    swayidle
+    swaylock
     xwayland-satellite
   ];
 }
