@@ -310,12 +310,12 @@ block-out-from "screen-capture"
 geometry-corner-radius 12
 clip-to-geometry true
 }
-workspace "1"
-workspace "2"
-workspace "3"
-workspace "4"
-workspace "5"
-workspace "6"
+workspace "Browser"
+workspace "Terminal"
+workspace "Steam"
+workspace "Heroic"
+workspace "DC"
+workspace "Others"
 window-rule {
     exclude app-id="kitty"
     exclude app-id="brave"
@@ -325,34 +325,34 @@ window-rule {
     exclude app-id="steam"
     exclude app-id="heroic"
     exclude app-id="discord"
-    open-on-workspace "6"
+    open-on-workspace "Others"
 }
 window-rule {
     match app-id="brave"
     match app-id="google-chrome"
     match app-id="chromium"
     match app-id="firefox"
-    open-on-workspace "1"
+    open-on-workspace "Browser"
     open-maximized true
 }
 window-rule {
     match app-id="kitty"
-    open-on-workspace "2"
+    open-on-workspace "Terminal"
     open-maximized true
 }
 window-rule {
     match app-id="steam"
-    open-on-workspace "3"
+    open-on-workspace "Steam"
     open-maximized true
 }
 window-rule {
     match app-id="heroic"
-    open-on-workspace "4"
+    open-on-workspace "Heroic"
     open-maximized true
 }
 window-rule {
     match app-id="discord"
-    open-on-workspace "5"
+    open-on-workspace "DC"
     open-maximized true
 }
 debug {
