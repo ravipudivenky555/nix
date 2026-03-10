@@ -238,6 +238,7 @@ layout {
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "xwayland-satellite"
 spawn-sh-at-startup "swayidle -w timeout 600 'swaylock -f' before-sleep 'swaylock -f'"
+spawn-at-startup "blueman-applet"
 spawn-at-startup "nm-applet"
 spawn-sh-at-startup "swaybg -i ~/wallpaper.jpg"
 spawn-at-startup "steam"
