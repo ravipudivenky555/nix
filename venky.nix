@@ -12,13 +12,12 @@ in
     defaultEditor = true;
     extraPackages = with pkgs; [
       fzf
-			luajitPackages.lua-lsp
-			nil
-			nixfmt
+      luajitPackages.lua-lsp
+      nil
+      nixfmt
       ripgrep
     ];
   };
   xdg.configFile."nvim".source = mkSymlink ./configs/nvim;
-  xdg.configFile."niri".source = mkSymlink ./configs/niri;
   xdg.configFile."kitty".source = mkSymlink ./configs/kitty;
 }

@@ -40,6 +40,7 @@
     gh
     google-chrome
     heroic
+    kdePackages.discover
     kitty
     mpv
     onlyoffice-desktopeditors
