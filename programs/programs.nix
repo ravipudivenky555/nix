@@ -40,9 +40,7 @@
     gh
     google-chrome
     heroic
-    kdePackages.discover
     kitty
-    lutris
     mpv
     onlyoffice-desktopeditors
     quickemu
