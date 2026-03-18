@@ -11,7 +11,6 @@
   };
   programs.nix-ld.enable = true;
   programs.steam.enable = true;
-  programs.virt-manager.enable = true;
 
   fonts.enableDefaultPackages = true;
   fonts.fontDir.enable = true;
@@ -26,12 +25,6 @@
       noto-fonts-monochrome-emoji
     ]
     ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
-
-  virtualisation.libvirtd = {
-    enable = true;
-    qemu.package = pkgs.qemu_full;
-  };
-  virtualisation.spiceUSBRedirection.enable = true;
 
   environment.systemPackages = with pkgs; [
     brave

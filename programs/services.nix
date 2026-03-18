@@ -50,6 +50,5 @@
     #media-session.enable = true;
   };
 
-  services.dnsmasq.enable = true;
   services.flatpak.enable = true;
 }
