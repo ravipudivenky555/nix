@@ -3,7 +3,7 @@ let
   mkSymlink = path: config.lib.file.mkOutOfStoreSymlink path;
 in
 {
-  home.stateVersion = "25.11";
+  home.stateVersion = "26.05";
 
   programs.neovim = {
     enable = true;
