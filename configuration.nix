@@ -12,6 +12,7 @@ in
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./programs/neovim.nix
+    ./programs/niri/niri.nix
     ./programs/programs.nix
     ./programs/services.nix
     (import "${home-manager}/nixos")
