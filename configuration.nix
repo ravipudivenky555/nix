@@ -28,6 +28,7 @@ in
   # Bootloader.
   # boot.loader.systemd-boot.enable = true;
   boot.loader.limine.enable = true;
+  boot.loader.limine.secureBoot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Use latest kernel.

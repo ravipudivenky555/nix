@@ -39,6 +39,7 @@
     onlyoffice-desktopeditors
     quickemu
     quickshell
+    sbctl
     unzip
     wget
     zip
