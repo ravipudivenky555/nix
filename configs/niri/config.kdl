@@ -349,9 +349,6 @@ window-rule {
     open-on-workspace "DC"
     open-maximized true
 }
-debug {
-    render-drm-device "/dev/dri/by-path/pci-0000:75:00.0-card"
-}
 binds {
     // Keys consist of modifiers separated by + signs, followed by an XKB key name
     // in the end. To find an XKB name for a particular key, you may use a program
