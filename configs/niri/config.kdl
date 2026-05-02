@@ -313,7 +313,7 @@ clip-to-geometry true
 }
 workspace "Browser"
 workspace "Terminal"
-workspace "Steam"
+workspace "Gaming"
 workspace "DC"
 workspace "Others"
 window-rule {
@@ -323,6 +323,7 @@ window-rule {
     exclude app-id="chromium"
     exclude app-id="firefox"
     exclude app-id="steam"
+    exclude app-id="heroic"
     exclude app-id="discord"
     open-on-workspace "Others"
 }
@@ -341,7 +342,8 @@ window-rule {
 }
 window-rule {
     match app-id="steam"
-    open-on-workspace "Steam"
+    match app-id="heroic"
+    open-on-workspace "Gaming"
     open-maximized true
 }
 window-rule {
