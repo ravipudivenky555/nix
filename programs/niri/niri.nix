@@ -13,6 +13,7 @@
     extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
   };
   environment.systemPackages = with pkgs; [
+    kdePackages.dolphin
     fuzzel
     networkmanagerapplet
     pavucontrol
