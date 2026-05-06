@@ -1,9 +1,12 @@
 { pkgs, ... }:
 {
-  programs.niri.enable = true;
+  programs.niri = {
+    enable = true;
+    useNautilus = true;
+  };
   programs.nm-applet.enable = true;
-  # programs.waybar.enable = true;
   programs.xwayland.enable = true;
+  programs.yazi.enable = true;
   services.blueman.enable = true;
   services.power-profiles-daemon.enable = true;
   xdg.portal = {
