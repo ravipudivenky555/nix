@@ -2,7 +2,7 @@
 {
   programs.niri.enable = true;
   programs.nm-applet.enable = true;
-  programs.waybar.enable = true;
+  # programs.waybar.enable = true;
   programs.xwayland.enable = true;
   services.blueman.enable = true;
   services.power-profiles-daemon.enable = true;
@@ -16,6 +16,7 @@
     kdePackages.dolphin
     fuzzel
     networkmanagerapplet
+    noctalia-shell
     pavucontrol
     swaybg
     swayidle
