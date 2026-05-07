@@ -16,7 +16,7 @@
     extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
   };
   environment.systemPackages = with pkgs; [
-    kdePackages.dolphin
+    kdePackages.discover
     fuzzel
     networkmanagerapplet
     noctalia-shell
