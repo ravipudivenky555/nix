@@ -51,6 +51,7 @@
   };
 
   services.flatpak.enable = true;
+  services.upower.enable = true;
 
   virtualisation.waydroid = {
     enable = true;
