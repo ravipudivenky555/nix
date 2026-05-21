@@ -6,7 +6,6 @@
   };
   programs.nm-applet.enable = true;
   programs.xwayland.enable = true;
-  programs.yazi.enable = true;
   services.blueman.enable = true;
   services.power-profiles-daemon.enable = true;
   xdg.portal = {
@@ -16,6 +15,7 @@
     extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
   };
   environment.systemPackages = with pkgs; [
+    kdePackages.dolphin
     kdePackages.discover
     fuzzel
     networkmanagerapplet

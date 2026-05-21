@@ -33,7 +33,6 @@
     gh
     google-chrome
     heroic
-    kitty
     mpv
     onlyoffice-desktopeditors
     quickemu
