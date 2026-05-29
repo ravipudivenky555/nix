@@ -29,6 +29,7 @@
   environment.systemPackages = with pkgs; [
     brave
     chromium
+    comma
     discord
     gh
     google-chrome
