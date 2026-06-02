@@ -4,6 +4,7 @@
     enable = true;
     binfmt = true;
   };
+  programs.direnv.enable = true;
   programs.firefox.enable = true;
   programs.git = {
     enable = true;
