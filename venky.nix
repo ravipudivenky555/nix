@@ -1,9 +1,9 @@
-{ config, pkgs, ... }:
+{ config, ... }:
 let
   mkSymlink = path: config.lib.file.mkOutOfStoreSymlink path;
 in
 {
-  home.stateVersion = "26.05";
+  home.stateVersion = "26.11";
 
   services.dunst.enable = true;
 
