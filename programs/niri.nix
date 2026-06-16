@@ -12,12 +12,12 @@
     enable = true;
     wlr.enable = true;
     xdgOpenUsePortal = true;
-    extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
+    extraPortals = with pkgs; [ xdg-desktop-portal-gnome ];
   };
   environment.systemPackages = with pkgs; [
     kdePackages.dolphin
-    kdePackages.discover
     fuzzel
+    nautilus
     networkmanagerapplet
     noctalia-shell
     pavucontrol
