@@ -835,5 +835,3 @@ binds {
         power-off-monitors
     }
 }
-
-include "dms/cursor.kdl"
