@@ -10,6 +10,7 @@
     enable = true;
     lfs.enable = true;
   };
+  programs.localsend.enable = true;
   programs.nix-ld.enable = true;
   programs.steam.enable = true;
 
