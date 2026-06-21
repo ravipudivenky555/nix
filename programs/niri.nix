@@ -1,13 +1,5 @@
 { pkgs, ... }:
 {
-  programs.dms-shell = {
-    enable = true;
-    enableClipboardPaste = true;
-    enableDynamicTheming = true;
-    enableSystemMonitoring = true;
-    enableVPN = true;
-    plugins = { };
-  };
   programs.niri = {
     enable = true;
     useNautilus = true;
