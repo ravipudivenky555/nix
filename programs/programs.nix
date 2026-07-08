@@ -12,7 +12,6 @@
   };
   programs.localsend.enable = true;
   programs.nix-ld.enable = true;
-  programs.steam.enable = true;
 
   fonts.enableDefaultPackages = true;
   fonts.fontDir.enable = true;
@@ -34,7 +33,6 @@
     discord
     gh
     google-chrome
-    heroic
     mpv
     onlyoffice-desktopeditors
     quickemu
