@@ -5,7 +5,6 @@
     binfmt = true;
   };
   programs.direnv.enable = true;
-  programs.firefox.enable = true;
   programs.git = {
     enable = true;
     lfs.enable = true;
@@ -28,11 +27,9 @@
     ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 
   environment.systemPackages = with pkgs; [
-    chromium
     comma
     discord
     gh
-    google-chrome
     mpv
     onlyoffice-desktopeditors
     quickemu
