@@ -68,5 +68,8 @@
       SkipTermsOfUse = true;
     };
   };
-  environment.systemPackages = with pkgs; [ google-chrome ];
+  environment.systemPackages = with pkgs; [
+    chromium
+    google-chrome
+  ];
 }
