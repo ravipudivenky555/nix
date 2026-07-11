@@ -47,6 +47,7 @@
       };
       relative_line_numbers = "enabled";
       semantic_tokens = "combined";
+      soft_wrap = "editor_width";
       telemetry = {
         diagnostics = true;
         metrics = false;
