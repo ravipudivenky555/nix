@@ -7,6 +7,7 @@
     ];
     userSettings = {
       assistant.enabled = false;
+      auto_signature_help = false;
       calls = {
         mute_on_join = false;
         share_on_join = false;
@@ -57,5 +58,26 @@
       use_smartcase_search = true;
       vim_mode = true;
     };
+    userKeymaps = [
+      {
+        "context" = "Editor && vim_mode == normal";
+        "bindings" = {
+          "q q" = "pane::CloseActiveItem";
+          "q w" = "workspace::Save";
+          "q e" = [
+            "action::Sequence"
+            [
+              "workspace::Save"
+              "pane::CloseActiveItem"
+            ]
+          ];
+
+          "s v" = "pane::SplitRight";
+          "s h" = "pane::SplitDown";
+
+          ";" = "command_palette::Toggle";
+        };
+      }
+    ];
   };
 }
