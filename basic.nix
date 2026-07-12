@@ -10,7 +10,7 @@
     automatic = true;
     dates = "weekly";
     persistent = true;
-    options = "--delete-older-than 3d";
+    options = "--delete-older-than 7d";
   };
   system.autoUpgrade = {
     enable = true;
