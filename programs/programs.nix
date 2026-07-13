@@ -28,13 +28,13 @@
 
   environment.systemPackages = with pkgs; [
     comma
-    discord
     gh
     mpv
     onlyoffice-desktopeditors
     quickemu
     sbctl
     unzip
+    vesktop
     wget
     zip
   ];
