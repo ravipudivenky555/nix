@@ -15,13 +15,11 @@
   };
   environment.systemPackages = with pkgs; [
     brightnessctl
+    hyprlauncher
     kdePackages.dolphin
     kdePackages.discover
     networkmanagerapplet
     noctalia-shell
     pavucontrol
-    swaybg
-    swayidle
-    swaylock
   ];
 }
