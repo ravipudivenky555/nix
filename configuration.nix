@@ -4,7 +4,7 @@
 
 { pkgs, ... }:
 let
-  home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/master.tar.gz";
+  home-manager = builtins.fetchGit "https://github.com/nix-community/home-manager";
   stylix = builtins.fetchGit { url = "https://github.com/nix-community/stylix"; };
 in
 {
