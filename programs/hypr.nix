@@ -14,6 +14,7 @@
     xdgOpenUsePortal = true;
   };
   environment.systemPackages = with pkgs; [
+    brightnessctl
     kdePackages.dolphin
     kdePackages.discover
     networkmanagerapplet
