@@ -5,7 +5,6 @@
 { pkgs, ... }:
 let
   home-manager = builtins.fetchGit "https://github.com/nix-community/home-manager";
-  stylix = builtins.fetchGit { url = "https://github.com/nix-community/stylix"; };
 in
 {
   imports = [
@@ -20,9 +19,7 @@ in
     ./programs/kitty.nix
     ./programs/programs.nix
     ./programs/services.nix
-    ./themes.nix
     (import "${home-manager}/nixos")
-    (import stylix).nixosModules.stylix
   ];
 
   home-manager.useUserPackages = true;
