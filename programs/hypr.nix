@@ -2,14 +2,6 @@
 {
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.sessionVariables.HYPR_STUB = "${pkgs.hyprland}/share/hypr/stubs";
-  programs.dms-shell = {
-    enable = true;
-    enableClipboardPaste = true;
-    systemd = {
-      enable = true;
-      restartIfChanged = true;
-    };
-  };
   programs.hyprland = {
     enable = true;
   };
@@ -27,6 +19,7 @@
     kdePackages.dolphin
     kdePackages.discover
     networkmanagerapplet
+    noctalia-shell
     pavucontrol
   ];
 }
